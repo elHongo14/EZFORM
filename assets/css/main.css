@@ -2269,10 +2269,19 @@ input, select, textarea {
 		background-repeat: repeat, no-repeat;
 	}
 
+/* Mobile */
+
+	#mobile {
+		background: url("images/overlay.png"), url("../../images/img2-1.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
 /* One */
 
 	#one {
-		background: url("images/overlay.png"), url("../../images/img2-1.jpg");
+		background: url("images/photo1.jpg"), url("../../images/photo1.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2281,7 +2290,7 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("images/overlay.png"), url("../../images/img3.jpg");
+		background: url("images/overlay.png"), url("../../images/photo4.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
