@@ -7,16 +7,16 @@ var contraseña = document.getElementById("psw").value;
 
 const Usuarios = {
         Correo: "ezform@gmail.com",
-        contraseña:"formatofacil"
+        contraseña:"hola"
 }
 
 if (usuario == Usuarios.Correo){
    
     if (Usuarios.contraseña == contraseña) {
-        errorp.innerHTML = "Correo y contraseña correcto"
-        window.location.href = '/pagina1'
-        
-    } else {
+        // alert('espera')
+        // errorp.innerHTML = "Correo y contraseña correcto"
+        window.location.href = 'http://localhost:5050/pagina1.html'
+    }else{
         errorp.innerHTML = "Contraseña incorrecta"
     }
 

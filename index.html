@@ -144,12 +144,14 @@
 						<div class="box">
 						<form method="post" action="#">
 							<div>
-								<div class="field half"><input type="text" class="name" placeholder="Nombre" /></div>
-								<div class="field half"><input type="email" class="email" placeholder="Email" /></div>
-								<div class="field half"><textarea type="message" placeholder="Mensaje" rows="6"></textarea></div>
+								<div class="field half"><input type="text" class="name" placeholder="Nombre"  id="name"/></div>
+								<div class="field half"><input type="email" class="email" placeholder="Email" id="email"/></div>
+								<div class="field half"><textarea type="message" placeholder="Mensaje" rows="6" id="message"></textarea></div>
 							</div>
 							<ul class="actions special">
-								<li><input type="submit" value="Enviar" /></li>
+								<li>
+									<button type="button" onclick="validarFormulario()">Enviar</button>
+								</li>
 							</ul>
 						</form>
 					</div>
@@ -173,5 +175,6 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/app.js"></script>
 			<script src="assets/js/main.js"></script>
 </html>
