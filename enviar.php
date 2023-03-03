@@ -14,7 +14,7 @@ $message .= "Mensaje: " . $_POST['comentarios'] . " \r\n";
 $message .= "Enviado el: " . date('d/m/Y', time());
 
 $para = 'elhongo1409@outlook.com';
-$asunto = 'el pepe ete sech';
+$asunto = 'ez-form';
 
 mail($para, $asunto, utf8_decode($message), $header);
 

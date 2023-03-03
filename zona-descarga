@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zona-descarga</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="icon/css/fontello.css">
+    <link rel="stylesheet" href="./assets/descarga.css">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div class="logo-title">
+                <h4>EZ-FORM</h4>
+            </div>
+            <nav class="navigation">
+                <div class=boton-inicio>
+                <ul>
+                    <li><a href="index.html"><font color=white>Inicio</font></a></li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-portada">
+        <div class="capa-gradient"></div>
+        <div class="container-details">
+            <div class="details">
+                <h1>Zona descarga</h1>
+                <p>OBTEN EZ-FORM YA!</p>
+                <a href="../EZFORM/download/ezform.Android_base.apk" download="ezfrom.apk"><button>Descargar</button></a>
+            </div>
+        </div>
+    </div>
