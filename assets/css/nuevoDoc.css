@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    background-color: #FFFFFF;
+    animation: focus 0.5s ease-out 1s forwards;
+}
+section {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh;
+    opacity: 0;
+    animation: sectionAppear 0.5s ease-out 1s forwards;
+}
+
+.tarjeta {
+    width: 45%;
+    height: 400px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.titulo {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    height: 50%;
+    opacity: 0;
+    animation: sectionAppear 0.5s ease-out 1.5s forwards;
+}
+
+.acciones a {
+    padding-inline: 10px;
+    transition: 0.2s;
+}
+
+.acciones img {
+    height: 100px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.acciones a:hover{
+    transform: scale(1.2);
+}
+
+@keyframes focus {
+    0%{
+        background-color: #FFFFFF;
+    }
+    100%{
+        background-color: #afafaf;
+    }
+}
+
+@keyframes sectionAppear {
+    0%{
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
