@@ -34,7 +34,7 @@ table .tabla_datos
 
 .hoja {
     margin: 100px auto;
-    height: 1000px;
+    height: auto;
     width: 80%;
     padding-inline: 50px;
     background-color: white;
@@ -66,7 +66,127 @@ img {
 }
 
 .DICfield {
-    display: flex;
-    flex-direction: column;
     margin-inline: 100px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #616161;
+}
+
+.DICfield img {
+    width: 200px;
+}
+
+.DICfield input {
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
+.DICfield input:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #f9df98;
+}
+
+
+td input {
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border: transparent;
+    transition: 0.2s;
+}
+
+td input:hover {
+    background-color: #f9df98;
+}
+
+.addRow {
+    color: white;
+    opacity: 0.3;
+    font-weight: bold;
+    background-color: #0074ce;
+    width: 100%;
+    border: none;
+    height: 50px;
+    margin-block-end: 15px;
+    transition: 0.2s;
+}
+
+.addRow:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    min-height: 95vh;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+
+  .modal-content input {
+    border-bottom: 1px solid #616161;
+  }
+
+  .exportBtn {
+    margin-top: 20px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.saveField {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.saveField label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.saveField input:focus ~ label,
+.saveField input:valid ~ label{
+    top: -5px;
+}
+
+.saveField input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
 }
