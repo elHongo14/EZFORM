@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./assets/css/redic008.css">
+    <link rel="stylesheet" href="./assets/css/redic012.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Redic008</title>
 </head>
-<body>
+<body id="fullpage">
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Guardar y Exportar</p>
+          <div class="saveField">
+            <input type="text" id="docName" required>
+            <label for="">Nombre del documento</label>
+          </div>
+          <button id="exportBtn" class="exportBtn">Exportar PDF</button>
+        </div>
+    </div>
    
-    <div class="hoja">
-         <img src="imagenes/logo-uts-10-aniversario.png" alt="">
+    <div class="hoja" id="page">
+         <img src="" alt="">
 
         <h2>  Universidad Tecnologica de Salamanca</h2>
-        <h3> <small> Organismo Publico Descentralizado del Gobierno del Estado de Guanajuato </small> </h3>
+        <h3> <small> Organismo Público Descentralizado del Gobierno del Estado de Guanajuato </small> </h3>
 
 
         <p> RELACION DE EXAMENES Y EDUCANDOS SUSTENTATES</p>
@@ -25,7 +39,7 @@
 
         <div class="datos">
             <p id="C"> Carerra:</p>
-            <select name="Carrera" id="Carrera">
+            <select name="Carrera" id="carrera">
                 <option value="T">TIS</option>
                 <option value="M">MEC</option>
                 <option value="A">ADM</option>
@@ -33,7 +47,7 @@
     
     
             <p> Materia:</p>
-            <select name="Materia" id="Materia">
+            <select name="Materia" id="materia">
                 <option value="I">Ingles</option>
                 <option value="B">Base de datos</option>
                 <option value="A">Algebra</option>
@@ -41,7 +55,7 @@
     
     
             <p id="CU"> Cuatrimestre:</p>
-            <select name="Cuatrimestre" id="Cuatrimestre">
+            <select name="Cuatrimestre" id="cuatri">
                 <option value="">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -51,7 +65,7 @@
         </div>
         
 
-    <div class="tabla_datos">
+    <div class="tabla_datos" id="tabla_datos">
         <table class="table table-striped" id="tabla" border="1">
             <tr class="tablaColor">
                 <th>NO</th>
@@ -60,15 +74,17 @@
                 <th>DURACION(HORAS)</th>
                 <th>OBSERVACIONES</th>
             </tr>
-        
-            <tr class="">
-                <td><center>  </center></td>
-                <td></td>
-                <td></td>
-                <td><input type="time"></td>
-                <td></td>
-            </tr>
-            <tr class="">
+            <tbody id="tableToModify">
+                <tr id="rowToClone">
+                    <td id="numFila">1</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="time"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+            
+            <!-- <tr class="">
                 <td><center> </center></td>
                 <td> </td>
                 <td></td>
@@ -89,19 +105,22 @@
                 <td><input type="time"></td>
                 <td></td>
                 <tr>
-            </tr>
+            </tr> -->
         </table>
     </div>
+
+    <button id="añadirFila" type="button" class="addRow" onclick="addRow()">Agregar Fila</button>
 
         <div class="firma">
 
             <div class="DICfield">
-                <p id="DIC03">   NOMBRE Y FIRMA DEL TUTOR </p>
-            <input type="file" id="firmapng">
+                <p id="DIC03">ELABORO DIC03 <br> NOMBREY FIRMA </p>
+                <input type="file" accept="image/*" onchange="loadFile1(event)">
+                <img id="firma1" src="">
             </div>
 
             <div class="DICfield">
-                <p id="DIC01"> Fecha de entrega:</p>
+                <p id="DIC"> Fecha de entrega:</p>
                 <input type="datetime-local">
             </div>
         </div>
@@ -109,6 +128,19 @@
         </form>
 
     </div>
-    
+
+    <div id="actions" class="actions">
+        <button id="saveBtn" class="saveBtn"><ion-icon name="save"></ion-icon>Guardar y Exportar</button>
+        <button id="formBtn" class="formBtn" onclick="location.href = '/nuevoDoc.html';"><ion-icon name="document"></ion-icon>Cambiar Formato</button>
+    </div>
+
+    <footer id="footer">
+        ©2023 - EZ-FORM
+    </footer>
+
 </body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./assets/js/ezformhandler008.js"></script>
 </html>

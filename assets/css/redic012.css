@@ -7,7 +7,7 @@ body{
     justify-content: center;
     text-align: center;
     background-color:gainsboro ;
-    
+    font-size: medium;
 }
 
 
@@ -127,7 +127,10 @@ td input:hover {
     height: 100%;
     width: 100%;
     overflow: auto;
+    backdrop-filter: blur(5px);
     background-color: rgba(0,0,0,0.4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    animation: modalAppear 0.5s ease-out 0s forwards;
   }
   
   /* Modal Content */
@@ -144,6 +147,11 @@ td input:hover {
   }
 
   .exportBtn {
+    border: none;
+    background-color: #00dc30;
+    color: white;
+    font-weight: bold;
+    height: 40px;
     margin-top: 20px;
   }
   
@@ -162,6 +170,40 @@ td input:hover {
     cursor: pointer;
   }
 
+
+.actions {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.actions button {
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-block: 10px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    transition: 0.2s;
+}
+
+.actions button:hover {
+    width: 150%;
+}
+
+.saveBtn {
+    background-color: #00dc30;
+}
+
+.formBtn {
+    background-color: #f0a800;
+}
+
 .saveField {
     position: relative;
     margin: 30px 0;
@@ -177,11 +219,6 @@ td input:hover {
     transition: .5s;
 }
 
-.saveField input:focus ~ label,
-.saveField input:valid ~ label{
-    top: -5px;
-}
-
 .saveField input {
     width: 100%;
     height: 50px;
@@ -189,4 +226,19 @@ td input:hover {
     border: none;
     outline: none;
     padding: 0 35px 0 5px;
+}
+
+.saveField input:focus ~ label,
+.saveField input:valid ~ label{
+    top: -5px;
+}
+
+@keyframes modalAppear {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px) rotate(-5deg);
+    }
+    100%{
+        opacity: 1;
+    }
 }

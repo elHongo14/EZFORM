@@ -62,6 +62,10 @@ window.onclick = function(event) {
 
 function readyToExport(){
 
+    // BODY
+    var body = document.getElementById("fullpage");
+    body.style.fontSize = "10px";
+
     // HOJA
     var page = document.getElementById("page");
     page.style.margin = "0";
@@ -92,6 +96,49 @@ function readyToExport(){
     // BOTÓN AÑADIR
     var btnAddRow = document.getElementById("añadirFila");
     btnAddRow.style.display = "none";
+
+    // MENÚ ACCIONES
+    var actions = document.getElementById("actions");
+    actions.style.display = "none";
+}
+
+function reloadCSS(){
+
+    // BODY
+    var body = document.getElementById("fullpage");
+    body.style.fontSize = "medium";
+
+    // HOJA
+    var page = document.getElementById("page");
+    page.style.margin = "100px auto";
+    page.style.width = "80%";
+    page.style.paddingInline = "50px";
+
+    // CAMPO CARRERA
+    var carrera = document.getElementById("carrera");
+    carrera.style.border = "2px solid #616161";
+
+    // CAMPO CARRERA
+    var cuatri = document.getElementById("cuatri");
+    cuatri.style.border = "1px solid #616161";
+    cuatri.style.textAlign = "start";
+
+    // CAMPO CARRERA
+    var grupo = document.getElementById("grupo");
+    grupo.style.border = "2px solid #616161";
+    grupo.style.textAlign = "start";
+
+    // TABLA DATOS
+    var tablaDatos = document.getElementById("tabla_datos");
+    tablaDatos.style.padding = "10px";
+
+    // BOTÓN AÑADIR
+    var btnAddRow = document.getElementById("añadirFila");
+    btnAddRow.style.display = "block";
+
+    // MENÚ ACCIONES
+    var actions = document.getElementById("actions");
+    actions.style.display = "flex";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -101,9 +148,11 @@ document.addEventListener("DOMContentLoaded", () => {
         var docName = document.getElementById("docName").value;
 
         readyToExport();
+        modal.style.display = "none";
         html2pdf()
             .set({
                 margin: 1,
+                top: 0,
                 filename: docName,
                 image: {
                     type: 'jpeg',
@@ -122,5 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
             .from($elementoParaConvertir)
             .save()
             .catch(err => console.log(err));
+            setTimeout(()=> {
+              reloadCSS();
+           }
+           ,1000);
+           setTimeout(()=> {
+            alert('!El documento "' +String(docName)+ '" ha sido exportado con éxito! ¡Gracias por usar EZ-FORM!');
+         }
+         ,1200);
     })
 })
